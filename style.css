@@ -12,7 +12,7 @@
 main {
   display: flex;
   justify-content: center;
-  margin: 1rem 10rem;
+  margin: 1rem 10% 1rem 15%;
 }
 main label {
   font-size: 0.9rem;
@@ -108,10 +108,10 @@ main input {
 
 .card-box {
   display: flex;
-  width: 80%;
+  width: 100%;
   flex-direction: column;
   background-color: #eeeeee;
-  padding: 1rem;
+  margin-right: 2rem;
   border-radius: 15px;
   display: flex;
   height: 64rem;
@@ -207,12 +207,8 @@ main input {
     width: 90%;
   }
 }
-@media screen and (max-width: 1112px) {
-  .information {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 1036px) {
+
+@media screen and (max-width: 1170px) {
   main {
     flex-direction: column-reverse;
     margin: 1rem 1rem;
