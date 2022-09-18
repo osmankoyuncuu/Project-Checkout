@@ -1,0 +1,239 @@
+@font-face {
+  font-family: myFont;
+  src: url(./fonts/Montserrat-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: myFont;
+  max-width: 1950px;
+}
+main {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 10rem;
+}
+main label {
+  font-size: 0.9rem;
+}
+header h1 {
+  text-align: center;
+  font-size: 2.1rem;
+  margin: 1.5rem;
+}
+.information {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: gray;
+}
+.contact {
+  margin-top: 1rem;
+}
+.contact h2 {
+  color: #333333;
+}
+.part {
+  margin: 1rem auto;
+}
+main input {
+  margin-top: 0.5rem;
+  width: 80%;
+  height: 2.4rem;
+  padding-left: 2.5rem;
+  border-radius: 6px;
+}
+.icon {
+  position: relative;
+}
+.fa-solid {
+  color: gray;
+}
+.icon i {
+  position: absolute;
+  top: 1.1rem;
+  left: 1rem;
+}
+.address h2 {
+  color: #333333;
+}
+.country-and-post {
+  display: flex;
+  width: 80%;
+}
+.country {
+  margin-top: 1rem;
+}
+.country select {
+  width: 8rem;
+  height: 2.4rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  padding-left: 2.5rem;
+}
+.post-code {
+  margin: 1rem 0 1rem 1rem;
+  width: 100%;
+}
+.post-code input {
+  width: 100%;
+}
+.checkbox {
+  position: relative;
+}
+#nextTime {
+  width: 1rem;
+}
+#nextTimeLabel {
+  margin-left: 0.5rem;
+  position: absolute;
+  top: 1.2rem;
+}
+.btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20%;
+}
+.btn button {
+  width: 5rem;
+  height: 3rem;
+  border-radius: 10px;
+  background-color: #f2994a;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.card-box {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  background-color: #eeeeee;
+  padding: 1rem;
+  border-radius: 15px;
+  display: flex;
+  height: 64rem;
+  /* width: 45rem; */
+}
+.card img {
+  width: 200px;
+}
+
+.card-box2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1rem 3rem;
+}
+.card {
+  display: flex;
+}
+.card-info {
+  padding: 0.5rem 0 0 1rem;
+  color: #4e5150;
+}
+.card-info h2 {
+  margin-bottom: 0.5rem;
+}
+.card img {
+  border-radius: 15px;
+}
+.valid {
+  font-size: 1.4rem;
+  color: #f2994a;
+  font-weight: bold;
+}
+.invalid {
+  text-decoration: line-through;
+}
+.piece {
+  border: 2px solid gray;
+  border-radius: 7px;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 12rem;
+  margin-top: 2rem;
+}
+.piece button {
+  width: 1.5rem;
+  height: 2rem;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.remove {
+  margin-top: 0.5rem;
+}
+.remove button {
+  background-color: brown;
+  color: white;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+.product-total {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+.result {
+  margin: 0 3rem;
+  font-size: 1.4rem;
+}
+.end {
+  border-top: 2px solid #b7b7b7;
+  margin-top: 2rem;
+  padding-top: 0.5rem;
+}
+.end .p1 {
+  float: left;
+}
+.end .p2 {
+  float: right;
+}
+
+@media screen and (max-width: 1207px) {
+  .information {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1112px) {
+  .information {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1036px) {
+  main {
+    flex-direction: column-reverse;
+    margin: 1rem 1rem;
+    min-width: 520px;
+  }
+  .information {
+    width: 80%;
+
+    margin: auto;
+  }
+  .information input {
+    width: 100%;
+  }
+  .card-box {
+    width: 70%;
+    margin: 1rem auto;
+  }
+  .country-and-post {
+    width: 100%;
+  }
+  .btn {
+    margin-right: 0%;
+  }
+}
