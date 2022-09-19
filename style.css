@@ -111,7 +111,7 @@ main input {
   width: 100%;
   flex-direction: column;
   background-color: #eeeeee;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   border-radius: 15px;
   display: flex;
   height: 64rem;
