@@ -12,7 +12,7 @@
 main {
   display: flex;
   justify-content: center;
-  margin: 1rem 10% 1rem 15%;
+  margin: 1rem 3rem 1rem 15rem;
 }
 main label {
   font-size: 0.9rem;
@@ -28,6 +28,7 @@ header h1 {
   flex-direction: column;
   justify-content: flex-start;
   color: gray;
+  margin-left: 1rem;
 }
 .contact {
   margin-top: 1rem;
@@ -125,7 +126,7 @@ main input {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 1rem 3rem;
+  margin: 2rem 3rem;
 }
 .card {
   display: flex;
@@ -200,36 +201,4 @@ main input {
 }
 .end .p2 {
   float: right;
-}
-
-@media screen and (max-width: 1207px) {
-  .information {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 1170px) {
-  main {
-    flex-direction: column-reverse;
-    margin: 1rem 1rem;
-    min-width: 520px;
-  }
-  .information {
-    width: 80%;
-
-    margin: auto;
-  }
-  .information input {
-    width: 100%;
-  }
-  .card-box {
-    width: 70%;
-    margin: 1rem auto;
-  }
-  .country-and-post {
-    width: 100%;
-  }
-  .btn {
-    margin-right: 0%;
-  }
 }
