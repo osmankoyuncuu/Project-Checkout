@@ -1,19 +1,9 @@
-//? Selectors
-
 const cardBox = document.querySelector(".card-box");
-const subTotalDom = document.querySelector("#subTotal");
-const taxDom = document.querySelector("#tax");
-const shippingDom = document.querySelector("#shipping");
-const totalDom = document.querySelector("#total");
 
 //?onload
-const shipping = 19;
-const shippingFree = 0;
-const tax = 0.18;
-const pTotal = document.querySelectorAll(".pTotal");
-
 window.addEventListener("load", () => {
-  calculate();
+  cardCalculate();
+  totalCalculate();
 });
 
 //? onclick
@@ -24,59 +14,67 @@ cardBox.addEventListener("click", (e) => {
       e.target.nextElementSibling.innerText--;
     } else {
       if (confirm("Product will be removed?")) {
-        e.target.parentElement.parentElement.parentElement.remove();
-        calculate();
+        e.target.closest(".card").remove();
       }
     }
-    calculate();
+    cardCalculate();
+    totalCalculate();
   }
   //? plus button
   if (e.target.classList.contains("plus")) {
     if (e.target.previousElementSibling.innerText >= 1) {
       e.target.previousElementSibling.innerText++;
     }
-    calculate();
+    cardCalculate();
+    totalCalculate();
   }
 
   //? remove button
   const result = document.querySelector(".result");
   if (e.target.classList.contains("remove-button")) {
-    if (
-      e.target.parentElement.parentElement.parentElement.parentElement
-        .childElementCount === 1
-    ) {
+    if (e.target.closest(".card-box2").childElementCount === 1) {
       e.target.parentElement.parentElement.parentElement.parentElement.remove();
       result.style.marginTop = "2rem";
       result.style.fontSize = "2rem";
       result.parentElement.style.height = "40rem";
       result.innerText = `Your cart is empty !!`;
-    } else if (e.target.classList.contains("remove-button")) {
-      e.target.parentElement.parentElement.parentElement.remove();
-      calculate();
+    } else {
+      e.target.closest(".card").remove();
     }
+    totalCalculate();
   }
 });
-
-const calculate = () => {
-  subTotal = 0;
-  pTotal.forEach((e) => {
-    productTotal =
-      Number(
-        e.parentElement.parentElement.parentElement.children[1].children[1]
-          .innerText
-      ) *
-      e.parentElement.parentElement.parentElement.children[2].children[1]
-        .innerText;
-    e.innerText = productTotal.toFixed(2);
-    subTotal += Number(e.innerText);
+//? card calculate
+const cardCalculate = () => {
+  const pieceSpan = document.querySelectorAll(".card .piece span");
+  pieceSpan.forEach((item) => {
+    item.closest(".card-info").querySelector(".pTotal").innerText = (
+      item.innerText *
+      item.closest(".card-info").querySelector(".valid").innerText
+    ).toFixed(2);
   });
-  //? Result
-  subTotalDom.innerText = subTotal.toFixed(2);
+};
+//? total calculate
+const totalCalculate = () => {
+  const subTotalDom = document.querySelector("#subTotal");
+  const taxDom = document.querySelector("#tax");
+  const shippingDom = document.querySelector("#shipping");
+  const totalDom = document.querySelector("#total");
+  let subTotal = 0;
+  const pTotal = document.querySelectorAll("span.pTotal");
+  pTotal.forEach((item) => {
+    subTotal += parseFloat(item.innerText);
+    subTotalDom.innerText = subTotal.toFixed(2);
+  });
+  let shipping = 19;
+  let shippingFree = 0;
+  let tax = 0.18;
   taxDom.innerText = (subTotal * tax).toFixed(2);
-  if (subTotal > 300) {
-    shippingDom.innerText = shippingFree;
-  } else {
-    shippingDom.innerText = shipping;
-  }
-  totalDom.innerText = (subTotal + subTotal * tax + shipping).toFixed(2);
+  subTotal > 300 ? (shipping = shippingFree) : (shipping = shipping);
+  shippingDom.innerText = shipping;
+  totalDom.innerText = (
+    subTotal +
+    parseFloat(taxDom.innerText) +
+    shipping
+  ).toFixed(2);
 };
